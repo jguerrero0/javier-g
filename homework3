@@ -1,0 +1,51 @@
+def main():
+    print("Student Records System")
+    print("1: Add Student Record")
+    print("2: View Students Record")
+    print("3: Search for a Student via ID")
+    print("4: Clear Student Record File")
+    print("5: Quit")
+    choice = int(input("Enter choice: "))
+    while choice > 5 or choice < 1:
+        choice = int(input("Enter choice: "))
+    print("User choice is", choice)
+
+
+def add_student():
+    file = open("student_records.txt", "w")
+    studentName = input("Enter student name: ")
+    studentID = input("Enter student ID: ")
+    studentGrade = input("Enter student grade: ")
+    file.write(studentName + "\n")
+    file.write(studentID + "\n")
+    file.write(studentGrade + "\n")
+    file.close()
+
+def view_students():
+    file = open("student_records.txt", "r")
+    line = student_records.readline()
+    while line != "":
+        print(line)
+    line = file.readline()
+    file.close()
+
+
+def search_student():
+    search = input("Enter ID to search: ")
+    file = open("student_records.txt", "r")
+    id = file.readline()
+    while id != "":
+        if search == id:
+                print(id)
+        break
+    id = file.readline().strip()
+    file.close()
+
+
+def clear_file():
+    file = open("student_records.txt", "r")
+    file.clear()
+    file.close()
+
+
+main()
